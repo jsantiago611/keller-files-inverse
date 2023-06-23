@@ -2003,6 +2003,9 @@ a.button-block {
     margin-top: 1.2ch;
     padding-right: 1rem;
 
+}
+
+.feed-title::after {
     background: var(--c-bg);
     content: "";
     position: absolute;
@@ -2018,7 +2021,6 @@ a.button-block {
     right: -100px;
     top: 0;
     bottom: 0;
-}
 }
 
 .feed-title:hover {
