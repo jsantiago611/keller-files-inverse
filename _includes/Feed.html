@@ -1,0 +1,58 @@
+{%- comment -%}
+*
+* MIT License
+* Copyright (c) 2020 Raghuveer S
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* File: Feed.html
+* Author@Raghuveer S
+*
+* This file contains the markup for the list of posts you see on the home page.
+* It is named feed.html because the structuring of the titles on the home page
+* looks like a social media feed.
+*
+*
+{%- endcomment -%}
+
+{%- if page.permalink == "/" -%}
+            <div>
+                <p style="padding: var(--space-2xl);font-weight: 500;font-size: var(--size-step-1);margin: 0;/* padding-left: 0 !important; *//* padding-bottom: 2rem !important; */font-family: 'New Editorial';/* letter-spacing: var(--font-family-sans); *//* text-transform: uppercase; */color: var(--c-card-text-muted);/* letter-spacing: 0.1ch; *//* text-align: center; */font-style: italic;font-feature-settings: 'liga','kern','dlig','ss10';margin-bottom: calc(var(--space-xl) + var(--space-2xl));padding-left: 1.5ch;/* padding-bottom: 1rem; */margin-bottom: 11ch;">Explore all 7
+                Ideas</p>
+            </div>
+    {%- for item in site.posts -%}
+        <div class="feed-title-excerpt-block disable-select" data-url="{{site.url}}{{item.url}}">
+            <a href="{{item.url}}" style="text-decoration: none;">
+            {%- if item.status == "Ongoing" or item.status == "ongoing" -%}
+            <ul class="tags">
+            <li style="padding: 5px 5px; border-radius: 10px;" class="status"><b>Status  </b>&nbsp{{item.status | capitalize }}</li>
+            </ul>
+            <p style="margin-top: 0px;" class="feed-title">{{ item.title }}</p>
+            {%- else -%}
+            <p class="feed-title">{{ item.title }}</p>
+            {%- endif -%}
+            {% if item.description %}
+            <p class="feed-excerpt">{{ item.description }}</p>
+            {% else %}
+            <p class="feed-excerpt">{{ item.content | strip_html | strip | escape | truncate: 200}}</p>
+            {%- endif -%}
+            </a>
+        </div>
+    {%- endfor -%}
+{%- endif -%}

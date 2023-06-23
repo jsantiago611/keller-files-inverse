@@ -1,0 +1,85 @@
+---
+---
+
+:root {
+    --c-bg: {{ themes[0].colors.bg }};
+	--c-accent: {{ themes[0].colors.accent }};
+	--c-text: {{ themes[0].colors.text }};
+	--c-text-muted: {{ themes[0].colors.text-muted }};
+	--c-text-strong: {{ themes[0].colors.text-strong }};
+	--c-text-link: {{ themes[0].colors.text-link }};
+	--c-border: {{ themes[0].colors.border }};
+	--c-border-light: {{ themes[0].colors.border-light }};
+	--c-btn-bg: {{ themes[0].colors.btn-bg }};
+	--c-btn-alt-bg: {{ themes[0].colors.btn-alt-bg }};
+	--c-card-bg: {{ themes[0].colors.card-bg }};
+	--c-card-bg-light: {{ themes[0].colors.card-bg-light }};
+	--c-card-border: {{ themes[0].colors.card-border }};
+	--c-card-border-light: {{ themes[0].colors.card-border-light }};
+	--c-card-text: {{ themes[0].colors.card-text }};
+	--c-card-text-muted: {{ themes[0].colors.card-text-muted }};
+	--c-card-text-link: {{ themes[0].colors.card-text-link }};
+	--c-bright-1: {{ themes[0].colors.bright-1 }};
+	--c-bright-2: {{ themes[0].colors.bright-2 }};
+	--c-topper-split-bg: {{ themes[0].colors.topper-split-bg }};
+	--c-gradient-fade: {{ themes[0].colors.gradient-fade }};
+	--c-gradient-fade-vert: {{ themes[0].colors.gradient-fade-vert }};
+}
+
+// if user preferred color scheme is dark
+// use the dark theme
+
+@media(prefers-color-scheme: dark) {
+    :root {
+    --c-bg: {{ themes[1].colors.bg }};
+	--c-accent: {{ themes[1].colors.accent }};
+	--c-text: {{ themes[1].colors.text }};
+	--c-text-muted: {{ themes[1].colors.text-muted }};
+	--c-text-strong: {{ themes[1].colors.text-strong }};
+	--c-text-link: {{ themes[1].colors.text-link }};
+	--c-border: {{ themes[1].colors.border }};
+	--c-border-light: {{ themes[1].colors.border-light }};
+	--c-btn-bg: {{ themes[1].colors.btn-bg }};
+	--c-btn-alt-bg: {{ themes[1].colors.btn-alt-bg }};
+	--c-card-bg: {{ themes[1].colors.card-bg }};
+	--c-card-bg-light: {{ themes[1].colors.card-bg-light }};
+	--c-card-border: {{ themes[1].colors.card-border }};
+	--c-card-border-light: {{ themes[1].colors.card-border-light }};
+	--c-card-text: {{ themes[1].colors.card-text }};
+	--c-card-text-muted: {{ themes[1].colors.card-text-muted }};
+	--c-card-text-link: {{ themes[1].colors.card-text-link }};
+	--c-bright-1: {{ themes[1].colors.bright-1 }};
+	--c-bright-2: {{ themes[1].colors.bright-2 }};
+	--c-topper-split-bg: {{ themes[1].colors.topper-split-bg }};
+	--c-gradient-fade: {{ themes[1].colors.gradient-fade }};
+	--c-gradient-fade-vert: {{ themes[1].colors.gradient-fade-vert }};
+    }
+}
+
+{% for theme in themes %}
+ [data-theme="{{ theme.id }}"] {
+    --c-bg: {{ themes.colors.bg }};
+	--c-accent: {{ themes.colors.accent }};
+	--c-text: {{ themes.colors.text }};
+	--c-text-muted: {{ themes.colors.text-muted }};
+	--c-text-strong: {{ themes.colors.text-strong }};
+	--c-text-link: {{ themes.colors.text-link }};
+	--c-border: {{ themes.colors.border }};
+	--c-border-light: {{ themes.colors.border-light }};
+	--c-btn-bg: {{ themes.colors.btn-bg }};
+	--c-btn-alt-bg: {{ themes.colors.btn-alt-bg }};
+	--c-card-bg: {{ themes.colors.card-bg }};
+	--c-card-bg-light: {{ themes.colors.card-bg-light }};
+	--c-card-border: {{ themes.colors.card-border }};
+	--c-card-border-light: {{ themes.colors.card-border-light }};
+	--c-card-text: {{ themes.colors.card-text }};
+	--c-card-text-muted: {{ themes.colors.card-text-muted }};
+	--c-card-text-link: {{ themes.colors.card-text-link }};
+	--c-bright-1: {{ themes.colors.bright-1 }};
+	--c-bright-2: {{ themes.colors.bright-2 }};
+	--c-topper-split-bg: {{ themes.colors.topper-split-bg }};
+	--c-gradient-fade: {{ themes.colors.gradient-fade }};
+	--c-gradient-fade-vert: {{ themes.colors.gradient-fade-vert }};
+ 
+ }
+{% endfor %}
