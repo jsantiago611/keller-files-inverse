@@ -2002,6 +2002,23 @@ a.button-block {
     margin-bottom: 3ch;
     margin-top: 1.2ch;
     padding-right: 1rem;
+
+    background: var(--c-bg);
+    content: "";
+    position: absolute;
+    -webkit-mask-image: url(../img/tab.svg); 
+    mask-image: url(../img/tab.svg);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    width: 100px;
+    right: -100px;
+    top: 0;
+    bottom: 0;
+}
 }
 
 .feed-title:hover {
